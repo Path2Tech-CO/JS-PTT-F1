@@ -1,6 +1,3 @@
-function markTodoComplete(){}
-function displayTodoLength(){}
-
 function app(){
   console.log('Welcome to the Todo Application');
   console.log('================================');
@@ -35,12 +32,31 @@ function app(){
     if (index >= 0 && index < todos.length) {
       todos[index].title = newTitle;
       todos[index].description = newDescription;
-      console.log(`Updated: $"{newTitle}"`);
+      console.log(`Updated: "${newTitle}"`);
     }
     else {
       console.log("Invalid index. Cannot edit todo.");
     }
   }
+
+  function markTodoComplete(index) {
+    if (index >=0 && index < todos.length) {
+      todos[index].complete = true;
+      console.log(`Todo at index ${index} marked as complete.`);
+    } else {
+      console.log("Invalid index. Cannot mark todo as complete.");
+    }
+  }
+markTodoComplete(0);
+
+
+function displayTodoLength() {
+  const totalTodos = todos.length;
+  const completedTodos = todos.filter(todo => todo.complete).length;
+  console.log(`You have ${totalTodos} todos, ${completedTodos} completed.`)
+}
+console.log(`Here is a list of your todos:`);
+displayTodoLength();
 
   addTodo("Second Todo", "This is my 2nd todo");
   addTodo("Third Todo", "This is my 3rd todo");
@@ -50,6 +66,12 @@ function app(){
 
   // Print the length of the todos array above this comment
   // Iterare over the todos array and console.log each todo below this comment
+  todos.forEach((todo, index) => {
+    console.log(`Todo ${index + 1}`);
+    console.log(`Title: ${todo.title}`);
+    console.log(`Description: ${todo.decription}`);
+    console.log(`Completed: $todo.complete ? "Yes" : "No"}`);
+  });
   console.log(todos);
 }
 
