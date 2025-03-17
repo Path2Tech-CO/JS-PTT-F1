@@ -1,19 +1,23 @@
 const todos = [
   {
-    title: "Apply for Tech aligned roles",
+    title: "First Todo",
     description: "This is the 1st initial todo",
     complete: false,
   }
 ];
 
-function addTodo(title, description) {
-  const newTodo = {
-    title: title, 
+function addTodo(title, description, complete = false) {
+  const newTodo ={
+    title: title,
     description: description,
-    complete: false
+    complete: complete
   };
   todos.push(newTodo);
 }
+
+addTodo("Second Todo", "This is my 2nd todo", true);
+console.log(todos);
+
 
 function removeTodo(){}
 function editTodo(){}
