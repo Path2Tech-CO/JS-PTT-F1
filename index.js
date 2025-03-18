@@ -56,24 +56,23 @@ function app(){
 function displayTodoLength() {
   console.log(`You have ${todos.length} todos`);
 }
-console.log(`Here is a list of your todos:`);
-displayTodoLength();
 
-  addTodo("Second Todo", "This is my 2nd todo");
-  addTodo("Third Todo", "This is my 3rd todo");
+
   // You will need to call your methods above this comment to edit the todos array
-  console.log('Here is a list of your todos:');
+  console.log(`Here is a list of your todos:`);
+  displayTodoLength();
+
   // Print the length of the todos array below this comment
 
   // Print the length of the todos array above this comment
   // Iterare over the todos array and console.log each todo below this comment
   todos.forEach((todo, index) => {
     console.log(`Todo ${index + 1}`);
-    console.log(`Title: ${todo.title}`);
-    console.log(`Description: ${todo.description}`);
-    console.log(`Completed: ${todo.complete ? "complete" : "not complete"}`);
+    console.log(`The title of the todo: ${todo.title}`);
+    console.log(`The description of the todo: ${todo.description}`);
+    console.log(`The todo is ${todo.complete ? "complete" : "not complete"}`);
+    console.log("");
   });
-  console.log(todos);
 }
 
 app();
