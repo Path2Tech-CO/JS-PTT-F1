@@ -54,9 +54,7 @@ function app(){
   markTodoComplete(1)
 
 function displayTodoLength() {
-  const totalTodos = todos.length;
-  const completedTodos = todos.filter(todo => todo.complete).length;
-  console.log(`You have ${totalTodos} todos, ${completedTodos} completed.`)
+  console.log(`You have ${todos.length} todos`);
 }
 console.log(`Here is a list of your todos:`);
 displayTodoLength();
