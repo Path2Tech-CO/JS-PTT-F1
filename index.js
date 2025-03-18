@@ -33,8 +33,7 @@ function app(){
       todos[index].title = newTitle;
       todos[index].description = newDescription;
       console.log(`Updated: "${newTitle}"`);
-    }
-    else {
+    } else {
       console.log("Invalid index. Cannot edit todo.");
     }
   }
@@ -47,8 +46,12 @@ function app(){
       console.log("Invalid index. Cannot mark todo as complete.");
     }
   }
-markTodoComplete(0);
 
+
+  addTodo("Second Todo", "This is my 2nd todo");
+  addTodo("Third Todo", "This is my 3rd todo");
+
+  markTodoComplete(1)
 
 function displayTodoLength() {
   const totalTodos = todos.length;
@@ -69,8 +72,8 @@ displayTodoLength();
   todos.forEach((todo, index) => {
     console.log(`Todo ${index + 1}`);
     console.log(`Title: ${todo.title}`);
-    console.log(`Description: ${todo.decription}`);
-    console.log(`Completed: $todo.complete ? "Yes" : "No"}`);
+    console.log(`Description: ${todo.description}`);
+    console.log(`Completed: ${todo.complete ? "complete" : "not complete"}`);
   });
   console.log(todos);
 }
